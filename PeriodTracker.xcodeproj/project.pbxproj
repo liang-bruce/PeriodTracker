@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		61D166E92F570BA300E59BF5 /* PeriodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D166E82F570BA300E59BF5 /* PeriodEntry.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		61D166CB2F56FF8F00E59BF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		61D166B92F56FF8E00E59BF5 /* PeriodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeriodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D166CA2F56FF8F00E59BF5 /* PeriodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeriodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D166D42F56FF8F00E59BF5 /* PeriodTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeriodTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61D166E82F570BA300E59BF5 /* PeriodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,6 +97,7 @@
 				61D166CD2F56FF8F00E59BF5 /* PeriodTrackerTests */,
 				61D166D72F56FF8F00E59BF5 /* PeriodTrackerUITests */,
 				61D166BA2F56FF8E00E59BF5 /* Products */,
+				61D166E82F570BA300E59BF5 /* PeriodEntry.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -249,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61D166E92F570BA300E59BF5 /* PeriodEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

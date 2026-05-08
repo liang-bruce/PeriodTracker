@@ -10,11 +10,18 @@ import SwiftData
 
 @main
 struct PeriodTrackerApp: App {
+    @AppStorage("appLanguage") private var appLanguageCode: String = "zh-Hans"
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            PeriodEntry.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+        let modelConfiguration = ModelConfiguration(
+            schema: schema,
+            isStoredInMemoryOnly: false,
+            cloudKitDatabase: .automatic
+        )
 
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
@@ -26,6 +33,8 @@ struct PeriodTrackerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.locale, Locale(identifier: appLanguageCode))
+                .environment(\.appCopy, AppCopy(language: AppLanguage.from(code: appLanguageCode)))
         }
         .modelContainer(sharedModelContainer)
     }
