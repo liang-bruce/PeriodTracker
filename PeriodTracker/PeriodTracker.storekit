@@ -1,0 +1,80 @@
+{
+  "identifier" : "B7C42E3F-9D2A-4F1B-B8A4-2E91C3D8F7A1",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "TIP_SMALL",
+      "localizations" : [
+        {
+          "description" : "A small thank-you to support development",
+          "displayName" : "Small coffee",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "请作者喝一小杯咖啡",
+          "displayName" : "小杯咖啡",
+          "locale" : "zh_CN"
+        }
+      ],
+      "productID" : "com.jitianliang.PeriodTracker.tip.small",
+      "referenceName" : "Tip Small",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "TIP_MEDIUM",
+      "localizations" : [
+        {
+          "description" : "A medium thank-you to support development",
+          "displayName" : "Medium coffee",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "请作者喝一中杯咖啡",
+          "displayName" : "中杯咖啡",
+          "locale" : "zh_CN"
+        }
+      ],
+      "productID" : "com.jitianliang.PeriodTracker.tip.medium",
+      "referenceName" : "Tip Medium",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "TIP_LARGE",
+      "localizations" : [
+        {
+          "description" : "A generous thank-you to support development",
+          "displayName" : "Large coffee",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "请作者喝一大杯咖啡",
+          "displayName" : "大杯咖啡",
+          "locale" : "zh_CN"
+        }
+      ],
+      "productID" : "com.jitianliang.PeriodTracker.tip.large",
+      "referenceName" : "Tip Large",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "PeriodTracker",
+    "_developerTeamID" : "U4VRMQD4GK",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

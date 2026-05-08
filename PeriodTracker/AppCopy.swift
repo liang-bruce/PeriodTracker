@@ -31,6 +31,11 @@ enum CopyKey {
     case editEntryTitle
     case editStartDate
     case editEndDate
+    case supportApp
+    case supportSubtitle
+    case tipThankYou
+    case tipUnavailable
+    case done
 }
 
 struct AppCopy {
@@ -88,6 +93,16 @@ struct AppCopy {
         case (.english, .editStartDate): return "Start Date"
         case (.chinese, .editEndDate): return "结束日期"
         case (.english, .editEndDate): return "End Date"
+        case (.chinese, .supportApp): return "请作者喝杯咖啡"
+        case (.english, .supportApp): return "Buy me a coffee"
+        case (.chinese, .supportSubtitle): return "如果你喜欢这个 app，欢迎请作者喝杯咖啡"
+        case (.english, .supportSubtitle): return "If you enjoy the app, consider supporting the developer"
+        case (.chinese, .tipThankYou): return "谢谢支持！"
+        case (.english, .tipThankYou): return "Thank you for your support!"
+        case (.chinese, .tipUnavailable): return "暂时无法加载"
+        case (.english, .tipUnavailable): return "Unavailable"
+        case (.chinese, .done): return "完成"
+        case (.english, .done): return "Done"
         }
     }
 

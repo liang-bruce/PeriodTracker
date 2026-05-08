@@ -16,6 +16,8 @@ struct HomeView: View {
     @AppStorage("periodDurationDays") private var periodDurationDays: Int = 5
     @AppStorage("cycleLengthDays") private var cycleLengthDays: Int = 30
 
+    @State private var showTipJar = false
+
     private var currentPeriodEntry: PeriodEntry? {
         entries.first(where: { $0.endDate == nil })
     }
@@ -100,6 +102,9 @@ struct HomeView: View {
                     menuButton
                 }
             }
+            .sheet(isPresented: $showTipJar) {
+                TipJarView()
+            }
         }
     }
 
@@ -118,6 +123,14 @@ struct HomeView: View {
 
             Stepper(value: $cycleLengthDays, in: 15...150) {
                 Text("\(copy.text(.cycleLength)): \(copy.daysText(cycleLengthDays))")
+            }
+
+            Divider()
+
+            Button {
+                showTipJar = true
+            } label: {
+                Label(copy.text(.supportApp), systemImage: "heart")
             }
         } label: {
             Image(systemName: "line.3.horizontal")
