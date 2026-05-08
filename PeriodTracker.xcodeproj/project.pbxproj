@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		616540302FADF8FF001EEA97 /* PeriodTrackerWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 616540262FADF8FC001EEA97 /* PeriodTrackerWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		616540352FADF924001EEA97 /* PeriodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D166E82F570BA300E59BF5 /* PeriodEntry.swift */; };
 		61D166E92F570BA300E59BF5 /* PeriodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D166E82F570BA300E59BF5 /* PeriodEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6165402E2FADF8FF001EEA97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61D166B12F56FF8D00E59BF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 616540252FADF8FC001EEA97;
+			remoteInfo = "PeriodTrackerWatch Watch App";
+		};
 		61D166CB2F56FF8F00E59BF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 61D166B12F56FF8D00E59BF5 /* Project object */;
@@ -27,7 +36,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		616540342FADF8FF001EEA97 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				616540302FADF8FF001EEA97 /* PeriodTrackerWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		616540262FADF8FC001EEA97 /* PeriodTrackerWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PeriodTrackerWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D166B92F56FF8E00E59BF5 /* PeriodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeriodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D166CA2F56FF8F00E59BF5 /* PeriodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeriodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61D166D42F56FF8F00E59BF5 /* PeriodTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeriodTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +59,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		616540372FADF936001EEA97 /* Exceptions for "PeriodTracker" folder in "PeriodTrackerWatch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppBackground.swift,
+				AppCopy.swift,
+				AppCopyEnvironment.swift,
+				AppLanguage.swift,
+				DateFormatters.swift,
+			);
+			target = 616540252FADF8FC001EEA97 /* PeriodTrackerWatch Watch App */;
+		};
 		61D166DC2F56FF9000E59BF5 /* Exceptions for "PeriodTracker" folder in "PeriodTracker" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -45,10 +80,16 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		616540272FADF8FC001EEA97 /* PeriodTrackerWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "PeriodTrackerWatch Watch App";
+			sourceTree = "<group>";
+		};
 		61D166BB2F56FF8E00E59BF5 /* PeriodTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				61D166DC2F56FF9000E59BF5 /* Exceptions for "PeriodTracker" folder in "PeriodTracker" target */,
+				616540372FADF936001EEA97 /* Exceptions for "PeriodTracker" folder in "PeriodTrackerWatch Watch App" target */,
 			);
 			path = PeriodTracker;
 			sourceTree = "<group>";
@@ -66,6 +107,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		616540232FADF8FC001EEA97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		61D166B62F56FF8E00E59BF5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,6 +144,7 @@
 				61D166BB2F56FF8E00E59BF5 /* PeriodTracker */,
 				61D166CD2F56FF8F00E59BF5 /* PeriodTrackerTests */,
 				61D166D72F56FF8F00E59BF5 /* PeriodTrackerUITests */,
+				616540272FADF8FC001EEA97 /* PeriodTrackerWatch Watch App */,
 				61D166BA2F56FF8E00E59BF5 /* Products */,
 				61D166E82F570BA300E59BF5 /* PeriodEntry.swift */,
 			);
@@ -107,6 +156,7 @@
 				61D166B92F56FF8E00E59BF5 /* PeriodTracker.app */,
 				61D166CA2F56FF8F00E59BF5 /* PeriodTrackerTests.xctest */,
 				61D166D42F56FF8F00E59BF5 /* PeriodTrackerUITests.xctest */,
+				616540262FADF8FC001EEA97 /* PeriodTrackerWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +164,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		616540252FADF8FC001EEA97 /* PeriodTrackerWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 616540312FADF8FF001EEA97 /* Build configuration list for PBXNativeTarget "PeriodTrackerWatch Watch App" */;
+			buildPhases = (
+				616540222FADF8FC001EEA97 /* Sources */,
+				616540232FADF8FC001EEA97 /* Frameworks */,
+				616540242FADF8FC001EEA97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				616540272FADF8FC001EEA97 /* PeriodTrackerWatch Watch App */,
+			);
+			name = "PeriodTrackerWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "PeriodTrackerWatch Watch App";
+			productReference = 616540262FADF8FC001EEA97 /* PeriodTrackerWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		61D166B82F56FF8E00E59BF5 /* PeriodTracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61D166DD2F56FF9000E59BF5 /* Build configuration list for PBXNativeTarget "PeriodTracker" */;
@@ -121,10 +193,12 @@
 				61D166B52F56FF8E00E59BF5 /* Sources */,
 				61D166B62F56FF8E00E59BF5 /* Frameworks */,
 				61D166B72F56FF8E00E59BF5 /* Resources */,
+				616540342FADF8FF001EEA97 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6165402F2FADF8FF001EEA97 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				61D166BB2F56FF8E00E59BF5 /* PeriodTracker */,
@@ -192,6 +266,9 @@
 				LastSwiftUpdateCheck = 2630;
 				LastUpgradeCheck = 2630;
 				TargetAttributes = {
+					616540252FADF8FC001EEA97 = {
+						CreatedOnToolsVersion = 26.3;
+					};
 					61D166B82F56FF8E00E59BF5 = {
 						CreatedOnToolsVersion = 26.3;
 					};
@@ -222,11 +299,19 @@
 				61D166B82F56FF8E00E59BF5 /* PeriodTracker */,
 				61D166C92F56FF8F00E59BF5 /* PeriodTrackerTests */,
 				61D166D32F56FF8F00E59BF5 /* PeriodTrackerUITests */,
+				616540252FADF8FC001EEA97 /* PeriodTrackerWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		616540242FADF8FC001EEA97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		61D166B72F56FF8E00E59BF5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,6 +336,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		616540222FADF8FC001EEA97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				616540352FADF924001EEA97 /* PeriodEntry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		61D166B52F56FF8E00E59BF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -276,6 +369,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6165402F2FADF8FF001EEA97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 616540252FADF8FC001EEA97 /* PeriodTrackerWatch Watch App */;
+			targetProxy = 6165402E2FADF8FF001EEA97 /* PBXContainerItemProxy */;
+		};
 		61D166CC2F56FF8F00E59BF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 61D166B82F56FF8E00E59BF5 /* PeriodTracker */;
@@ -289,6 +387,74 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		616540322FADF8FF001EEA97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PeriodTrackerWatch Watch App/PeriodTrackerWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U4VRMQD4GK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PeriodTrackerWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jitianliang.PeriodTracker;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jitianliang.PeriodTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		616540332FADF8FF001EEA97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PeriodTrackerWatch Watch App/PeriodTrackerWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U4VRMQD4GK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PeriodTrackerWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.jitianliang.PeriodTracker;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jitianliang.PeriodTracker.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
 		61D166DE2F56FF9000E59BF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -565,6 +731,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		616540312FADF8FF001EEA97 /* Build configuration list for PBXNativeTarget "PeriodTrackerWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				616540322FADF8FF001EEA97 /* Debug */,
+				616540332FADF8FF001EEA97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		61D166B42F56FF8D00E59BF5 /* Build configuration list for PBXProject "PeriodTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

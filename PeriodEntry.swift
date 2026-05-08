@@ -10,7 +10,10 @@ import SwiftData
 
 @Model
 final class PeriodEntry {
-    var startDate: Date
+    // CloudKit-backed SwiftData requires every non-optional property to have a default
+    // value, because CloudKit may sync records with missing fields. The init still
+    // overrides this, so creation behaviour is unchanged.
+    var startDate: Date = Date()
     var endDate: Date?
 
     init(startDate: Date, endDate: Date? = nil) {
