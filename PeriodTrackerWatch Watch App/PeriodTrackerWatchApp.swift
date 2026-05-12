@@ -10,6 +10,10 @@ import SwiftData
 
 @main
 struct PeriodTrackerWatchApp: App {
+    init() {
+        UserDefaults.standard.register(defaults: ["appLanguage": AppLanguage.systemDefault.rawValue])
+    }
+
     @AppStorage("appLanguage") private var appLanguageCode: String = "en"
 
     var sharedModelContainer: ModelContainer = {

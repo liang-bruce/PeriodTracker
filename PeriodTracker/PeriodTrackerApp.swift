@@ -10,7 +10,13 @@ import SwiftData
 
 @main
 struct PeriodTrackerApp: App {
-    @AppStorage("appLanguage") private var appLanguageCode: String = "zh-Hans"
+    init() {
+        // Register a system-locale-derived default for appLanguage. This only takes
+        // effect on first launch (before the user has explicitly chosen a language).
+        UserDefaults.standard.register(defaults: ["appLanguage": AppLanguage.systemDefault.rawValue])
+    }
+
+    @AppStorage("appLanguage") private var appLanguageCode: String = "en"
 
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
