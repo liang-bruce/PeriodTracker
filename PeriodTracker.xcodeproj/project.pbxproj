@@ -395,7 +395,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PeriodTrackerWatch Watch App/PeriodTrackerWatch Watch App.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = U4VRMQD4GK;
 				ENABLE_PREVIEWS = YES;
@@ -433,7 +433,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PeriodTrackerWatch Watch App/PeriodTrackerWatch Watch App.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = U4VRMQD4GK;
 				ENABLE_PREVIEWS = YES;
@@ -471,7 +471,7 @@
 				CODE_SIGN_ENTITLEMENTS = PeriodTracker/PeriodTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = U4VRMQD4GK;
 				ENABLE_PREVIEWS = YES;
@@ -509,7 +509,7 @@
 				CODE_SIGN_ENTITLEMENTS = PeriodTracker/PeriodTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = U4VRMQD4GK;
 				ENABLE_PREVIEWS = YES;
