@@ -36,6 +36,9 @@ enum CopyKey {
     case tipThankYou
     case tipUnavailable
     case done
+    case tipSmall
+    case tipMedium
+    case tipLarge
 }
 
 struct AppCopy {
@@ -103,6 +106,24 @@ struct AppCopy {
         case (.english, .tipUnavailable): return "Unavailable"
         case (.chinese, .done): return "完成"
         case (.english, .done): return "Done"
+        case (.chinese, .tipSmall): return "小杯咖啡"
+        case (.english, .tipSmall): return "Small coffee"
+        case (.chinese, .tipMedium): return "中杯咖啡"
+        case (.english, .tipMedium): return "Medium coffee"
+        case (.chinese, .tipLarge): return "大杯咖啡"
+        case (.english, .tipLarge): return "Large coffee"
+        }
+    }
+
+    // StoreKit's `product.displayName` follows the user's App Store account language,
+    // not the app's internal language toggle. Map our product IDs to AppCopy strings
+    // so the tip jar respects the in-app language setting.
+    func tipDisplayName(for productID: String) -> String {
+        switch productID {
+        case "com.jitianliang.PeriodTracker.tip.small": return text(.tipSmall)
+        case "com.jitianliang.PeriodTracker.tip.medium": return text(.tipMedium)
+        case "com.jitianliang.PeriodTracker.tip.large": return text(.tipLarge)
+        default: return text(.tipSmall) // fallback
         }
     }
 

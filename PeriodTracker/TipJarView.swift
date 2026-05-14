@@ -75,7 +75,7 @@ struct TipJarView: View {
             Task { await tipJar.purchase(product) }
         } label: {
             HStack {
-                Text(product.displayName)
+                Text(copy.tipDisplayName(for: product.id))
                     .font(.body.weight(.semibold))
                     .foregroundStyle(.primary)
                 Spacer()
