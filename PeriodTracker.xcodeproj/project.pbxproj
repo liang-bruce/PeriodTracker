@@ -67,6 +67,7 @@
 				AppCopyEnvironment.swift,
 				AppLanguage.swift,
 				DateFormatters.swift,
+				OvulationCalculator.swift,
 			);
 			target = 616540252FADF8FC001EEA97 /* PeriodTrackerWatch Watch App */;
 		};
@@ -395,7 +396,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PeriodTrackerWatch Watch App/PeriodTrackerWatch Watch App.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = U4VRMQD4GK;
 				ENABLE_PREVIEWS = YES;
@@ -433,7 +434,7 @@
 				CODE_SIGN_ENTITLEMENTS = "PeriodTrackerWatch Watch App/PeriodTrackerWatch Watch App.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = U4VRMQD4GK;
 				ENABLE_PREVIEWS = YES;
@@ -471,7 +472,7 @@
 				CODE_SIGN_ENTITLEMENTS = PeriodTracker/PeriodTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = U4VRMQD4GK;
 				ENABLE_PREVIEWS = YES;
@@ -509,7 +510,7 @@
 				CODE_SIGN_ENTITLEMENTS = PeriodTracker/PeriodTracker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = U4VRMQD4GK;
 				ENABLE_PREVIEWS = YES;

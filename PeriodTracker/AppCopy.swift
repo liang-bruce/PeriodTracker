@@ -39,6 +39,12 @@ enum CopyKey {
     case tipSmall
     case tipMedium
     case tipLarge
+    case fertileWindowTitle
+    case fertileWindowAlgorithm
+    case fertileWindowBookCitation
+    case fertileWindowDefaultNote
+    case fertileWindowInfoLabel
+    case close
 }
 
 struct AppCopy {
@@ -112,6 +118,40 @@ struct AppCopy {
         case (.english, .tipMedium): return "Medium coffee"
         case (.chinese, .tipLarge): return "大杯咖啡"
         case (.english, .tipLarge): return "Large coffee"
+        case (.chinese, .fertileWindowTitle): return "受孕窗口"
+        case (.english, .fertileWindowTitle): return "Fertile Window"
+        case (.chinese, .fertileWindowAlgorithm):
+            return """
+            日历法
+
+            日历法有助于判断月经周期的平均天数及大概的排卵时间。如果你并不清楚自己的月经周期，就记录几个月——连续记录 6~12 个月准确性更高。
+
+            确定了月经周期的平均天数后，就能大概估计排卵期了。需要牢记黄体期——也就是排卵后身体准备怀孕的阶段——通常固定为 14 天。因此，如果月经周期是 30 天，那么排卵期差不多在月经的第 16 天（30 天 - 14 天 = 16 天）。那么，最佳的受孕时机就是月经第 12~17 天。如果在这段时间内隔日同房，精子就有机会与卵母细胞相遇。
+
+            如果你觉得这种方法太复杂，乔治城大学的研究者开发了一种计算机模型，能够计算月经周期不同时间的受孕率。研究发现，对于月经周期规律，26~32 天的女性，最佳的受孕时机为月经的第 8~19 天。
+            """
+        case (.english, .fertileWindowAlgorithm):
+            return """
+            Calendar method
+
+            The calendar method helps estimate your average cycle length and approximate ovulation timing. If you don't know your cycle yet, log a few months — six to twelve consecutive months gives better accuracy.
+
+            Once you know the average cycle length, you can estimate ovulation. Remember that the luteal phase — the post-ovulation phase when the body prepares for pregnancy — is generally a fixed 14 days. So if the cycle is 30 days, ovulation is roughly on cycle day 16 (30 - 14 = 16). The best window for conception is therefore around cycle days 12 to 17. Having intercourse every other day in this window gives sperm a chance to meet the egg.
+
+            If this feels too complex, researchers at Georgetown University developed a computational model that calculates the probability of conception across the cycle. For women with regular cycles of 26-32 days, the model identifies cycle days 8 to 19 as the optimal window.
+            """
+        case (.chinese, .fertileWindowBookCitation):
+            return "出处：《梅奥备孕全书 提高生育力的全方位医学权威指南》"
+        case (.english, .fertileWindowBookCitation):
+            return "Source: Mayo Clinic Guide to Fertility and Conception"
+        case (.chinese, .fertileWindowDefaultNote):
+            return "记录不足时，平均经期间隔默认为 30 天。"
+        case (.english, .fertileWindowDefaultNote):
+            return "When there are not enough records yet, the average cycle interval defaults to 30 days."
+        case (.chinese, .fertileWindowInfoLabel): return "了解排卵期"
+        case (.english, .fertileWindowInfoLabel): return "About fertile window"
+        case (.chinese, .close): return "关闭"
+        case (.english, .close): return "Close"
         }
     }
 

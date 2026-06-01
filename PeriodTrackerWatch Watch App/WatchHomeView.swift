@@ -11,6 +11,9 @@ struct WatchHomeView: View {
     @Environment(\.appCopy) private var copy
     @Query(sort: \PeriodEntry.startDate, order: .reverse) private var entries: [PeriodEntry]
 
+    // Same auto-derived value as on iPhone — each device computes from synced entries.
+    @AppStorage("averageCycleLengthDays") private var averageCycleLengthDays: Int = OvulationCalculator.defaultCycleLength
+
     private var currentPeriodEntry: PeriodEntry? {
         entries.first(where: { $0.endDate == nil })
     }
@@ -34,6 +37,17 @@ struct WatchHomeView: View {
         return Calendar.current.dateComponents([.day], from: endDate, to: Date()).day
     }
 
+    private var isInFertileWindow: Bool {
+        guard !isInPeriod, let mostRecentStart = latestEndedPeriod?.startDate else {
+            return false
+        }
+        let cycleDay = OvulationCalculator.cycleDay(from: mostRecentStart)
+        return OvulationCalculator.isInFertileWindow(
+            cycleDay: cycleDay,
+            cycleLength: averageCycleLengthDays
+        )
+    }
+
     var body: some View {
         ZStack {
             AppBackground()
@@ -55,6 +69,8 @@ struct WatchHomeView: View {
             }
             .padding(.vertical, 4)
         }
+        .task { recomputeAverageCycleLength() }
+        .onChange(of: entries) { _, _ in recomputeAverageCycleLength() }
     }
 
     @ViewBuilder
@@ -71,7 +87,7 @@ struct WatchHomeView: View {
                     .foregroundStyle(.secondary)
                 Text(copy.daysText(days))
                     .font(.title3.weight(.semibold))
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(isInFertileWindow ? .pink : .primary)
             }
         }
         // Empty state (no records yet): no status text, just the start button below.
@@ -84,6 +100,10 @@ struct WatchHomeView: View {
         }
         let newEntry = PeriodEntry(startDate: Date())
         modelContext.insert(newEntry)
+    }
+
+    private func recomputeAverageCycleLength() {
+        averageCycleLengthDays = OvulationCalculator.averageCycleLength(from: entries)
     }
 }
 

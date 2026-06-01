@@ -16,7 +16,13 @@ struct HomeView: View {
     @AppStorage("periodDurationDays") private var periodDurationDays: Int = 5
     @AppStorage("cycleLengthDays") private var cycleLengthDays: Int = 30
 
+    // Auto-derived average cycle length used for ovulation/fertile-window calculation.
+    // Each device computes this from the same CloudKit-synced PeriodEntry data, so the
+    // value converges to the same number on iPhone and Watch without explicit sync.
+    @AppStorage("averageCycleLengthDays") private var averageCycleLengthDays: Int = OvulationCalculator.defaultCycleLength
+
     @State private var showTipJar = false
+    @State private var showFertileInfo = false
 
     private var currentPeriodEntry: PeriodEntry? {
         entries.first(where: { $0.endDate == nil })
@@ -54,6 +60,17 @@ struct HomeView: View {
         return max(rawValue + 1, 1)
     }
 
+    private var isInFertileWindow: Bool {
+        guard !isInPeriod, let mostRecentStart = latestEndedPeriod?.startDate else {
+            return false
+        }
+        let cycleDay = OvulationCalculator.cycleDay(from: mostRecentStart)
+        return OvulationCalculator.isInFertileWindow(
+            cycleDay: cycleDay,
+            cycleLength: averageCycleLengthDays
+        )
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -65,7 +82,7 @@ struct HomeView: View {
                     }
 
                     if let days = daysSinceLastEnd {
-                        infoRow(title: copy.text(.daysSince), value: copy.daysText(days))
+                        daysSinceRow(days: days)
                     }
 
                     if let day = currentPeriodDay {
@@ -105,6 +122,11 @@ struct HomeView: View {
             .sheet(isPresented: $showTipJar) {
                 TipJarView()
             }
+            .sheet(isPresented: $showFertileInfo) {
+                FertileWindowInfoView()
+            }
+            .task { recomputeAverageCycleLength() }
+            .onChange(of: entries) { _, _ in recomputeAverageCycleLength() }
         }
     }
 
@@ -148,6 +170,27 @@ struct HomeView: View {
         .font(.body)
     }
 
+    private func daysSinceRow(days: Int) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 6) {
+            Text(copy.text(.daysSince))
+                .foregroundStyle(.secondary)
+            Text(copy.daysText(days))
+                .fontWeight(.semibold)
+                .foregroundStyle(isInFertileWindow ? Color(.systemPink) : .primary)
+            if isInFertileWindow {
+                Button {
+                    showFertileInfo = true
+                } label: {
+                    Image(systemName: "info.circle")
+                        .foregroundStyle(.secondary)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(copy.text(.fertileWindowInfoLabel))
+            }
+        }
+        .font(.body)
+    }
+
     private func handlePeriodButtonTapped() {
         if let activeEntry = currentPeriodEntry {
             activeEntry.endDate = Date()
@@ -156,6 +199,10 @@ struct HomeView: View {
 
         let newEntry = PeriodEntry(startDate: Date())
         modelContext.insert(newEntry)
+    }
+
+    private func recomputeAverageCycleLength() {
+        averageCycleLengthDays = OvulationCalculator.averageCycleLength(from: entries)
     }
 }
 
