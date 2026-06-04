@@ -60,6 +60,14 @@ struct HomeView: View {
         return max(rawValue + 1, 1)
     }
 
+    // The actually-measured average from entries, or nil if we don't have
+    // enough plausible data yet. Used for the optional "Average cycle" row
+    // so that row only appears when grounded in real history (not the
+    // 30-day default that powers the fertile-window calculation).
+    private var measuredAverageCycleLength: Int? {
+        OvulationCalculator.averageCycleLengthIfAvailable(from: entries)
+    }
+
     private var isInFertileWindow: Bool {
         guard !isInPeriod, let mostRecentStart = latestEndedPeriod?.startDate else {
             return false
@@ -89,6 +97,10 @@ struct HomeView: View {
                         Text(copy.currentDayText(day))
                             .font(.title3.weight(.semibold))
                             .foregroundStyle(.primary)
+                    }
+
+                    if let avg = measuredAverageCycleLength {
+                        infoRow(title: copy.text(.averageCycle), value: copy.daysText(avg))
                     }
 
                     Button(action: handlePeriodButtonTapped) {
@@ -125,8 +137,16 @@ struct HomeView: View {
             .sheet(isPresented: $showFertileInfo) {
                 FertileWindowInfoView()
             }
-            .task { recomputeAverageCycleLength() }
-            .onChange(of: entries) { _, _ in recomputeAverageCycleLength() }
+            .task {
+                recomputeAverageCycleLength()
+                updateWidgetSnapshot()
+            }
+            .onChange(of: entries) { _, _ in
+                recomputeAverageCycleLength()
+                updateWidgetSnapshot()
+            }
+            .onChange(of: averageCycleLengthDays) { _, _ in updateWidgetSnapshot() }
+            .onChange(of: appLanguageCode) { _, _ in updateWidgetSnapshot() }
         }
     }
 
@@ -203,6 +223,16 @@ struct HomeView: View {
 
     private func recomputeAverageCycleLength() {
         averageCycleLengthDays = OvulationCalculator.averageCycleLength(from: entries)
+    }
+
+    private func updateWidgetSnapshot() {
+        WidgetSnapshot(
+            activePeriodStart: currentPeriodEntry?.startDate,
+            lastEndedStart: latestEndedPeriod?.startDate,
+            lastEndedEnd: latestEndedPeriod?.endDate,
+            averageCycleLength: averageCycleLengthDays,
+            languageCode: appLanguageCode
+        ).save()
     }
 }
 

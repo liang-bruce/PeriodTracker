@@ -39,9 +39,13 @@ enum OvulationCalculator {
     static let plausibleIntervalRange = 15...60
     static let plausibleCycleLengthRange = 21...45
 
-    static func averageCycleLength(from entries: [PeriodEntry]) -> Int {
+    // Returns nil when there's not enough confident data to compute a real
+    // average — i.e. fewer than 2 entries, or no intervals fall in the
+    // plausible 15-60 day range. UI that should only render when grounded
+    // in real history (e.g. the "average cycle" row) should use this.
+    static func averageCycleLengthIfAvailable(from entries: [PeriodEntry]) -> Int? {
         let sortedStarts = entries.map(\.startDate).sorted()
-        guard sortedStarts.count >= 2 else { return defaultCycleLength }
+        guard sortedStarts.count >= 2 else { return nil }
 
         var intervals: [Int] = []
         for i in 1..<sortedStarts.count {
@@ -55,9 +59,13 @@ enum OvulationCalculator {
             }
         }
 
-        guard !intervals.isEmpty else { return defaultCycleLength }
+        guard !intervals.isEmpty else { return nil }
         let average = Double(intervals.reduce(0, +)) / Double(intervals.count)
         return Int(average.rounded())
+    }
+
+    static func averageCycleLength(from entries: [PeriodEntry]) -> Int {
+        averageCycleLengthIfAvailable(from: entries) ?? defaultCycleLength
     }
 
     static func ovulationDay(cycleLength: Int) -> Int {

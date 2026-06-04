@@ -45,6 +45,10 @@ enum CopyKey {
     case fertileWindowDefaultNote
     case fertileWindowInfoLabel
     case close
+    case widgetPeriodDayLabel
+    case widgetDaysSinceLabel
+    case widgetNoData
+    case averageCycle
 }
 
 struct AppCopy {
@@ -152,6 +156,14 @@ struct AppCopy {
         case (.english, .fertileWindowInfoLabel): return "About fertile window"
         case (.chinese, .close): return "关闭"
         case (.english, .close): return "Close"
+        case (.chinese, .widgetPeriodDayLabel): return "经期第"
+        case (.english, .widgetPeriodDayLabel): return "Period day"
+        case (.chinese, .widgetDaysSinceLabel): return "距上次"
+        case (.english, .widgetDaysSinceLabel): return "Days since"
+        case (.chinese, .widgetNoData): return "暂无记录"
+        case (.english, .widgetNoData): return "No data yet"
+        case (.chinese, .averageCycle): return "平均间隔:"
+        case (.english, .averageCycle): return "Average cycle:"
         }
     }
 
